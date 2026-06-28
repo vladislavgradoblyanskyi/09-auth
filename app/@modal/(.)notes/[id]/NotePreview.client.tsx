@@ -1,6 +1,6 @@
 "use client";
 import Modal from "@/components/Modal/Modal";
-import {fetchNoteById} from "@/lib/api/api";
+import {fetchNoteById} from "@/lib/api/clientApi";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import css from "./modal.module.css"
