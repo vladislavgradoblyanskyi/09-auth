@@ -3,7 +3,7 @@ import css from './SignUpPage.module.css'
 import { register,RegisterRequest } from '@/lib/api/clientApi';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ApiError } from '@/app/api/api'
+
 import { useAuthStore } from '@/lib/store/authStore';
 
 export default function SignUp(){
@@ -26,11 +26,8 @@ export default function SignUp(){
       else setError('Invalid email or password')
       
     } catch (error) {
-      setError(
-        (error as ApiError).response?.data?.error ??
-          (error as ApiError).message ??
-          'Oops... some error'
-      )
+      console.log(error);
+      setError("Something went wrong");
     }
     }
 

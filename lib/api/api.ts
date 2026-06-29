@@ -1,5 +1,6 @@
 import axios from "axios";
-const BASE_URL = "https://09-auth-gray-psi.vercel.app//api"
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL+"/api";
+
 
 export const nextServer = axios.create({
   baseURL: BASE_URL,

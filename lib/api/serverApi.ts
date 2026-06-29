@@ -46,7 +46,7 @@ export async function ServerfetchNotes(page: number=1, search: string="",tag? : 
   return response.data;
 }
 
-export default async function ServerfetchNoteById (id:string) {
+export async function serverFetchNoteById (id:string) {
   const cookieStore = await cookies();
   const res = await nextServer.get<Note>(`/notes/${id}`,{
     headers:{Cookie: cookieStore.toString(),}
@@ -55,7 +55,7 @@ export default async function ServerfetchNoteById (id:string) {
 };
 
 
-export async function SerevrdeleteNote(id: string) {
+export async function serverDeleteNote(id: string) {
   const cookieStore = await cookies();
   const response = await nextServer.delete<Note>(`/notes/${id}`,{
     headers:{Cookie: cookieStore.toString(),}

@@ -2,6 +2,29 @@ import Image from "next/image"
 import Link from "next/link"
 import css from './ProfilePgae.module.css'
 import { getServerMe  } from "@/lib/api/serverApi";
+import { Metadata } from "next";
+
+
+export async function generateMetadata(): Promise<Metadata> {
+
+    return {
+    title: `Profile page`,
+    description: `You can update your account on this page`,
+    openGraph:{
+    title: `Profile page`,
+    description: `You can update your account on this page`,
+    url: `${process.env.base_url}/profile`,
+    images: [{
+      url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+      width: 1200,
+      height: 630,
+      alt : "notehub img",
+    }]
+  }
+  }
+}
+
+
 export default async function Profile(){
   const user = await getServerMe();
   console.log(user);
