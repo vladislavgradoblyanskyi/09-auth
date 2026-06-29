@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import css from './ProfilePgae.module.css'
+import css from './ProfilePage.module.css'
 import { getServerMe  } from "@/lib/api/serverApi";
 import { Metadata } from "next";
 
@@ -27,9 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Profile(){
   const user = await getServerMe();
-  console.log(user);
-  
-  
+
     return(
             <main className={css.mainContent}>
               <div className={css.profileCard}>
